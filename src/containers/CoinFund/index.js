@@ -1,0 +1,144 @@
+import React from "react";
+import Link from "next/link";
+import CountdownTimer from "react-component-countdown-timer";
+import Modal from 'react-modal';
+import { Container, Row, Col } from "reusecore/Layout";
+import Box from "reusecore/Box";
+import Heading from "reusecore/Heading";
+import Text from "reusecore/Text";
+import { SectionTitle, SectionBackground } from "reusecore/SectionTitle";
+import Button from "reusecore/Button";
+import {
+  FaEthereum
+} from "react-icons/fa";
+import CoinFundWrapper from "./coinFund.style";
+import { withTheme } from "styled-components";
+
+Modal.setAppElement('body');
+
+const CoinFund = () => {
+  const settings = { 
+    count: 7948800,
+    showTitle: true,
+    size: 60,
+    labelSize: 14,
+    backgroundColor: "transparent",
+    color: "#fff",
+    dayTitle: "Days",
+    hourTitle: "Hours",
+    minuteTitle: "Minutes",
+    secondTitle: "Seconds",
+    id: "countdownwrap"
+  };
+  
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      background: 'linear-gradient(94deg,rgba(200, 56, 231, 1) 0%,rgba(31, 42, 213, 1) 100%)',
+      textAlign: 'center',
+      minWidth: '300px'
+    },
+    input: {
+      height: '50px',
+      borderRadius: '10px',
+      border: 'none',
+      padding: '10px',
+      marginRight: '10px',
+      marginBottom: '30px'
+    },
+    button: {
+      background: '#29115d',
+      color: 'white',
+      border: '1px solid white'
+    }
+  };
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [tokenAmount, setTokenAmount] = React.useState(0);
+  const tokenValule = 0.01;
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function amountHandler(e) {
+    setTokenAmount(e.target.value);
+  }
+
+  function getAmount() {
+    alert(tokenAmount * tokenValule);
+  }
+  return (
+    <CoinFundWrapper id="presale">
+      <Container>
+        <Row>
+          <Col className="lg-6 md-12 ">
+            <Box className="coin-fund-content-left">
+              <SectionTitle>
+                <SectionBackground>
+                  <Heading>
+                    Leventoken ICO start March 1st 2022.
+                  </Heading>
+                </SectionBackground>
+                <Text>
+                  Presale date will be announced soon. Our private sale is open now. Please connect your wallet. Contact 
+                  <a href="info@levenproject.org" target="_blank"><u> info@levenproject.org </u></a>
+                  for more information
+                </Text>
+              </SectionTitle>
+
+              <Box className="btn-wrapper">
+                <Button onClick={openModal} className="btn btn-fill">Buy Leventoken</Button>
+              </Box>
+              
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Buy LevenToken"
+              >
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Buy LevenToken</h2>
+                <div class="token-input-form">
+                  <input type="number" className="token-amount" style={customStyles.input} onChange={amountHandler}/>
+                  LEVEN
+                </div>
+                <Button onClick={getAmount} className="btn btn-fill" style={customStyles.button}>Buy</Button>
+              </Modal>
+            </Box>
+          </Col>
+          <Col className="lg-6 md-12 countdown-wrap">
+            <Box className="countdown-wrapper">
+              <Text> Leventoken ICO Progress </Text>
+              <CountdownTimer {...settings} />
+            </Box>
+            <Box className="progressbar-wrapper">
+              <Box className="progressbar">
+                <Text as="span">$2,000,000</Text>
+              </Box>
+              <Text as="span">$20,000,000</Text>
+            </Box>
+
+            <Box className="payment-getway">
+              <Text as="span">
+                {" "}
+                <FaEthereum />{" "}
+              </Text>
+            </Box>
+          </Col>
+        </Row>
+      </Container>
+    </CoinFundWrapper>
+  );
+};
+
+export default CoinFund;
