@@ -6,7 +6,7 @@ const Data = {
     },
     {
       name: "White Paper",
-      path: "about",
+      path: "",
       offset: "-100"
     },
     {

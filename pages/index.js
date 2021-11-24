@@ -20,8 +20,10 @@ import Footer from "containers/Footer";
 import FavIcon from "assets/images/fav-icon.svg";
 import theme from "assets/theme/theme";
 import GlobalStyle from "assets/theme";
-
+import Modal from 'react-modal';
 import PresaleContract from "../contract/abi/presale.abi.json";
+
+Modal.setAppElement('body');
 
 const Home = () => {
 
@@ -73,8 +75,8 @@ const Home = () => {
   const getFreeToken = async() => {
     try {
       const airdropStatus = await getAirdropStatus();
-      if (airdropStatus == true) {
-        return false;
+      if (airdropStatus == false) {
+        openModal();
       }
       await checkAccount();
       const response = await presaleContract.methods.airdrop().send({ from: walletAddress });
@@ -115,6 +117,44 @@ const Home = () => {
     }
   }
 
+  const modalStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      background: '#290E59',
+      textAlign: 'center',
+      minWidth: '300px',
+      borderRadius: '15px'
+    },
+    alert: {
+      color: 'red'
+    },
+    close: {
+      color: 'white',
+      position: 'absolute',
+      top: '0',
+      right: '0',
+      width: 'fit-content'
+    },
+    highlight: {
+      border: '2px solid red'
+    }
+  };
+  
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -146,6 +186,17 @@ const Home = () => {
       <Faq />
       <Stack />
       <Footer />
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={modalStyles}
+        contentLabel="Airdrop alert"
+      >
+        <button onClick={closeModal} style={modalStyles.close}>✗</button>
+        <h2 style={modalStyles.alert}>Alert</h2>
+        <p>You have already claimed your airdrops, use your referral link to get some more.</p>
+      </Modal>
     </ThemeProvider>
   );
 };

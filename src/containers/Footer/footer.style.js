@@ -68,7 +68,7 @@ const FooterWrapper = styled.div`
   .footer-social-links {
     padding: 45px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     border-top: 0.5px solid #4e55aa;
     border-bottom: 0.5px solid #4e55aa;

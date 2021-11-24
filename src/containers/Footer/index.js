@@ -132,8 +132,8 @@ const Footer = () => {
             <Col className="xs-12">
               <Box className="footer-social-links">
                 {data.links.map((item, index) => (
-                  <Link href={item.url} key={index}>
-                    <a> {item.icon} </a>
+                  <Link href="#" key={index}>
+                    <a href={item.url} target="_blank"> {item.icon} </a>
                   </Link>
                 ))}
               </Box>

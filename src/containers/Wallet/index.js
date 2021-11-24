@@ -33,15 +33,11 @@ const Wallet = () => {
             <Box className="wallet-left-content">
               <SectionTitle>
                 <SectionBackground>
-                  <Heading> Crypto management wallet </Heading>
+                  <Heading> Leven Network Wallet </Heading>
                 </SectionBackground>
-                {/* <Text>
-                  Attention in when in just something bread not hundred well,
-                  muff value emerge on the known officers. A parameters phase
-                  orthographic the can differentiates far catch he warned a they
-                  but country. Times, cache in and what but the that go
-                  facilitate far were house.
-                </Text> */}
+                <Text>
+                  A wallet that gives you access to a full suite of DeFi services in one place. Receive payments, send payments, diversify your Leven tokens to your favorite pToks.com people and grow with them. It could be your favorite social influencer or athlete, it under the same Leven Network
+                </Text>
               </SectionTitle>
 
               {/* <Box className="wallet-info">

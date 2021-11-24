@@ -12,7 +12,7 @@ import TokenDistribution from "assets/images/distribution/token-distribution.svg
 
 const Statistics = () => {
   return (
-    <StatisticsSectionWrapper>
+    <StatisticsSectionWrapper id="tokenomics">
       <Box className="statistics-wrapper">
         <Container>
           <Row>

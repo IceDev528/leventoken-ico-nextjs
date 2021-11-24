@@ -78,7 +78,6 @@ const CoinFund = (props) => {
 
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const [showHighlight, setHighlight] = React.useState(false);
 
   function openModal() {
     setIsOpen(true);
