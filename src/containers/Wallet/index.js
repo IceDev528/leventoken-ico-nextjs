@@ -35,23 +35,23 @@ const Wallet = () => {
                 <SectionBackground>
                   <Heading> Crypto management wallet </Heading>
                 </SectionBackground>
-                <Text>
+                {/* <Text>
                   Attention in when in just something bread not hundred well,
                   muff value emerge on the known officers. A parameters phase
                   orthographic the can differentiates far catch he warned a they
                   but country. Times, cache in and what but the that go
                   facilitate far were house.
-                </Text>
+                </Text> */}
               </SectionTitle>
 
-              <Box className="wallet-info">
+              {/* <Box className="wallet-info">
                 {data.wallet.map((item, index) => (
                   <Box className="counter-item" key={index}>
                     <Counter end={item.count} suffix={item.suffixText} />
                     <Text>{item.body}</Text>
                   </Box>
                 ))}
-              </Box>
+              </Box> */}
             </Box>
           </Col>
         </Row>

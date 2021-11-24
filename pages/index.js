@@ -117,11 +117,11 @@ const Home = () => {
       <Service />
       <CoinFund />
       <About />
-      <Awards />
-      <UserMap />
+      {/* <Awards /> */}
+      {/* <UserMap /> */}
       <Wallet />
       <Statistics />
-       <Faq />
+      <Faq />
       <Stack />
       <Footer />
     </ThemeProvider>
