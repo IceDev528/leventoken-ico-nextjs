@@ -41,20 +41,27 @@ const CoinFund = () => {
       transform: 'translate(-50%, -50%)',
       background: '#290E59',
       textAlign: 'center',
-      minWidth: '300px'
+      minWidth: '300px',
+      borderRadius: '15px'
     },
     input: {
       height: '50px',
       borderRadius: '10px',
       border: 'none',
       padding: '10px',
-      marginRight: '10px',
-      marginBottom: '30px'
+      marginLeft: '20px',
+      marginBottom: '20px',
+      fontFamily: 'MuseoSans'
     },
     buy: {
       background: 'linear-gradient(94deg,rgba(200, 56, 231, 1) 0%,rgba(31, 42, 213, 1) 100%)',
       color: 'white',
-      border: 'none'
+      border: 'none',
+      height: 'unset',
+      width: '100px',
+      padding: '10px',
+      borderRadius: '10px',
+      marginTop: '20px'
     },
     close: {
       color: 'white',
@@ -68,7 +75,7 @@ const CoinFund = () => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [tokenAmount, setTokenAmount] = React.useState(0);
-  const tokenValule = 0.01;
+  const tokenByETH = 0.00025;
 
   function openModal() {
     setIsOpen(true);
@@ -112,13 +119,14 @@ const CoinFund = () => {
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 style={customStyles}
-                contentLabel="Buy LevenToken"
+                contentLabel="Buy Leventoken"
               >
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Buy Leventoken</h2>
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Buy LEVEN</h2>
                 <button onClick={closeModal} style={customStyles.close}>✗</button>
                 <div>
-                  Token Amount: <input type="number" className="token-amount" style={customStyles.input} onChange={amountHandler}/>
+                  ETH Amount: <input type="number" className="token-amount" style={customStyles.input} onChange={amountHandler}/>
                 </div>
+                <div>LEVEN : { tokenAmount / tokenByETH }</div>
                 <Button onClick={getAmount} className="btn btn-fill" style={customStyles.buy}>Buy</Button>
               </Modal>
             </Box>
