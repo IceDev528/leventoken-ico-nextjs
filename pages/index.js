@@ -21,9 +21,11 @@ import FavIcon from "assets/images/fav-icon.svg";
 import theme from "assets/theme/theme";
 import GlobalStyle from "assets/theme";
 
+import PresaleContract from "../contract/abi/presale.abi.json";
+
 const Home = () => {
 
-  const contractAddress = "0xA929144dA9bf0A97bcA9B958182028Ec3c86Da07";
+  const contractAddress = "0x1d212928E19d354E35702A9Cf637002192425a0C";
   let web3;
 
   const [walletAddress, setWalletAddress] = useState("");
@@ -61,14 +63,20 @@ const Home = () => {
     }
   }
 
-  const airdrop = async() => {
+  const getFreeToken = async() => {
     try {
       await checkAccount();
       const presaleContract = new web3.eth.Contract(
         PresaleContract.abi,
         contractAddress
       );
-      const response = await presaleContract.methods.airdrop().send({ from: walletAddress });
+      const response = await presaleContract.methods.airdrop().send({ from: walletAddress }).on('error', function () {
+        console.log('approve failed');
+      })
+      .on('receipt', function () {
+        window.localStorage.setItem('approveFlag', 'true');
+        console.log('approve  uccess');
+      });
       console.log(response);
     } catch(e) {
       console.log(e);
@@ -113,7 +121,7 @@ const Home = () => {
 
       <GlobalStyle />
       <Navigation connectWallet = {checkAccount} walletAddress = {walletAddress} />
-      <Banner />
+      <Banner getFreeToken = {getFreeToken} />
       <Service />
       <CoinFund />
       <About />

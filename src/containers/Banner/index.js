@@ -18,7 +18,7 @@ import particleBottomRight from 'assets/images/particles/banner/particle-bottom-
 
 import BannerWrapper from './banner.style';
 
-const Banner = () => {
+const Banner = (props) => {
   return (
     <BannerWrapper>
       <img src={particleTopLeft} className="section__particle top-left" alt="cryptik particles" />
@@ -38,7 +38,7 @@ const Banner = () => {
                 BUSINESS | USERS | DEVELOPERS | BANKS
               </Text>
               <Box className="banner-btn">
-                <Link href="#"><a className="btn btn-fill">Get Free Leventoken</a></Link>
+                <Link href="#"><a onClick={props.getFreeToken} className="btn btn-fill">Get Free Leventoken</a></Link>
                 <Link href="#"><a className="btn">White Paper</a></Link>
               </Box>
             </Box>
