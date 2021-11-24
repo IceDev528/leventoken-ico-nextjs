@@ -40,8 +40,12 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
         </li>
       ))}
       <li>
-        <button className="nav__button">
-          Connect Wallet
+        <button 
+          className="nav__button" 
+          onClick={props.connectWallet} 
+          style={{overflow: 'hidden', textOverflow: 'ellipsis'}} 
+        >
+          {props.walletAddress == '' ? 'Connect Wallet' : props.walletAddress }
         </button>
       </li>
     </ul>

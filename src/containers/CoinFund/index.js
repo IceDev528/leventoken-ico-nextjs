@@ -124,7 +124,13 @@ const CoinFund = () => {
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Buy LEVEN</h2>
                 <button onClick={closeModal} style={customStyles.close}>✗</button>
                 <div>
-                  ETH Amount: <input type="number" className="token-amount" style={customStyles.input} onChange={amountHandler}/>
+                  ETH Amount: 
+                  <input 
+                    type="number" 
+                    className="token-amount" 
+                    style={customStyles.input} 
+                    onChange={amountHandler}
+                  />
                 </div>
                 <div>LEVEN : { tokenAmount / tokenByETH }</div>
                 <Button onClick={getAmount} className="btn btn-fill" style={customStyles.buy}>Buy</Button>
