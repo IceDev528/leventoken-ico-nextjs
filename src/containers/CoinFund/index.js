@@ -16,7 +16,7 @@ import { withTheme } from "styled-components";
 
 Modal.setAppElement('body');
 
-const CoinFund = () => {
+const CoinFund = (props) => {
   const settings = { 
     count: 7948800,
     showTitle: true,
@@ -78,10 +78,7 @@ const CoinFund = () => {
 
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const [tokenAmount, setTokenAmount] = React.useState(0);
   const [showHighlight, setHighlight] = React.useState(false);
-
-  const tokenByETH = 0.00025;
 
   function openModal() {
     setIsOpen(true);
@@ -92,12 +89,18 @@ const CoinFund = () => {
   }
 
   function amountHandler(e) {
-    setTokenAmount(e.target.value);
+    props.setTokenAmount(e.target.value);
   }
 
-  function getAmount() {
-    if (tokenAmount < 10000) alert('Minimum is $10,000, please try again');
-    setHighlight(true);
+  const getAmount =  async () => {
+    await props.checkAccount();
+    const investPrice = props.tokenAmount * props.tokenByETH;
+    if (investPrice < 2.36)  {
+      alert('Minimum is $10,000, please try again');
+    } else {
+      await props.buyToken();
+      setHighlight(true);
+    }
   }
   return (
     <CoinFundWrapper id="presale">
@@ -147,7 +150,7 @@ const CoinFund = () => {
                     onChange={amountHandler}
                   />
                 </div>
-                <div>ETH Amount:  : { tokenAmount * tokenByETH }</div>
+                <div>ETH Amount:  : { props.tokenAmount * props.tokenByETH }</div>
                 <Button onClick={getAmount} className="btn btn-fill" style={customStyles.buy}>Buy</Button>
               </Modal>
             </Box>

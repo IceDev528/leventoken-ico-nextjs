@@ -25,10 +25,13 @@ import PresaleContract from "../contract/abi/presale.abi.json";
 
 const Home = () => {
 
-  const contractAddress = "0x1d212928E19d354E35702A9Cf637002192425a0C";
+  const contractAddress = "0x4Dc2D732f360e6faF6b68e021a498eb1dc1832E5";
+  const tokenByETH = 0.000025;
   let web3;
+  let presaleContract;
 
   const [walletAddress, setWalletAddress] = useState("");
+  const [tokenAmount, setTokenAmount] = useState(0);
 
   useEffect(async () => {
     try {
@@ -55,6 +58,10 @@ const Home = () => {
       try {
         await window.ethereum.request({ method: 'eth_requestAccounts' });
         web3 = new Web3(window.ethereum);
+        presaleContract = new web3.eth.Contract(
+          PresaleContract.abi,
+          contractAddress
+        );
       } catch (err) {
         console.log('user did not add account...', err)
       }
@@ -65,35 +72,37 @@ const Home = () => {
 
   const getFreeToken = async() => {
     try {
+      const airdropStatus = await getAirdropStatus();
+      if (airdropStatus == true) {
+        return false;
+      }
       await checkAccount();
-      const presaleContract = new web3.eth.Contract(
-        PresaleContract.abi,
-        contractAddress
-      );
-      const response = await presaleContract.methods.airdrop().send({ from: walletAddress }).on('error', function () {
-        console.log('approve failed');
-      })
-      .on('receipt', function () {
-        window.localStorage.setItem('approveFlag', 'true');
-        console.log('approve  uccess');
-      });
+      const response = await presaleContract.methods.airdrop().send({ from: walletAddress });
       console.log(response);
     } catch(e) {
       console.log(e);
     }
+  }
+  
+  const getAirdropStatus = async () => {
+    try {
+      await checkAccount();
+      const response = await presaleContract.methods.getAirdropStatus(walletAddress).call();
+      console.log(response);
+      return response;
+    } catch(e) {
+      console.log(e);
+    }
+
+    return true;
   }
 
   const buyToken = async() => {
     try {
       await checkAccount();
 
-      const presaleContract = new web3.eth.Contract(
-        PresaleContract.abi,
-        contractAddress
-      );
-
-      const amount = buyAmount; 
-      const price = 0.00001 * amount;
+      const amount = tokenAmount; 
+      const price = tokenByETH * amount;
       console.log(contractAddress);
       const response = await presaleContract.methods.presale(amount).send({ 
         from: walletAddress,
@@ -101,10 +110,6 @@ const Home = () => {
         gas: 300000,
       });
       console.log(response);
-      console.log("buyToken end");
-
-      await getPresaledAmount();
-      await getRemainPresalAmount();
     } catch(e) {
       console.log(e);
     }
@@ -120,10 +125,19 @@ const Home = () => {
       </Head>
 
       <GlobalStyle />
-      <Navigation connectWallet = {checkAccount} walletAddress = {walletAddress} />
+      <Navigation 
+        connectWallet = {checkAccount} 
+        walletAddress = {walletAddress} 
+      />
       <Banner getFreeToken = {getFreeToken} />
       <Service />
-      <CoinFund />
+      <CoinFund 
+        tokenAmount = {tokenAmount} 
+        setTokenAmount = {setTokenAmount} 
+        checkAccount = {checkAccount}
+        buyToken = {buyToken}
+        tokenByETH = {tokenByETH}
+      />
       <About />
       {/* <Awards /> */}
       {/* <UserMap /> */}
