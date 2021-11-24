@@ -10,7 +10,6 @@ import NavigationWrap from "./navigation.style";
 
 const Navigation = (props) => {
   const [expand, setExpand] = useState(false);
-  const [scrolled, setScrolled] = React.useState(false);
 
   useEffect(() => {
     const header = document.getElementById("navbar");
