@@ -8,7 +8,9 @@ import Text from 'reusecore/Text';
 import Image from 'reusecore/Image';
 import { SectionTitle, SectionBackground } from 'reusecore/SectionTitle';
 import { FaGooglePlay, FaApple } from "react-icons/fa";
-import potsWork from 'assets/images/icons/potswork.svg';
+import PotsWork from 'assets/images/potswork/Potswork.svg';
+import PToks from 'assets/images/potswork/PToks.svg';
+import ToksCity from 'assets/images/potswork/ToksCity.svg';
 import AboutSectionWrapper from './about.style';
 
 const About = () => {
@@ -17,7 +19,7 @@ const About = () => {
             <Container>
                 <Row>
                     <Col className="lg-5 md-6 sm-12">
-                        <Image src={potsWork} className="about-image" alt="cryptik about image" />
+                        <Image src={PotsWork} className="about-image" alt="potswork" />
                     </Col>
                     <Col className="lg-6 offset-lg-1 md-6 sm-12">
                         <Box className="about-right-content">
@@ -47,6 +49,58 @@ const About = () => {
                                 </a>
                                 <a className="btn" href="https://apps.apple.com/us/developer/potswork-llc/id1539375753" target="_blank">
                                     <FaApple /> Apple Store
+                                </a>
+                            </Box>
+                        </Box>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="lg-5 md-6 sm-12">
+                        <Image src={ToksCity} className="about-image" alt="tokscity" />
+                    </Col>
+                    <Col className="lg-6 offset-lg-1 md-6 sm-12">
+                        <Box className="about-right-content">
+                            <SectionTitle>
+                                <SectionBackground>
+                                    <Heading as="h1">
+                                        Product Token For Crowdfunding Campaigns
+                                    </Heading>
+                                </SectionBackground>
+
+                                <Text>
+                                    Tap into the over $3 trillion dollar market. No coding necessary. Give your product crowdfunding campaign some rocket fuel. Leven Network app Product token allows any startup planning on crowdfunding to easily setup a token campaign on our user friendly crowdfunding platform. Crowdfund with Tokscity.com
+                                </Text>
+                            </SectionTitle>
+
+                            <Box className="about-btn-wrapper">
+                                <a className="btn" href="https://www.ptoks.com" target="_blank">
+                                    Join the Waitlist
+                                </a>
+                            </Box>
+                        </Box>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="lg-5 md-6 sm-12">
+                        <Image src={PToks} className="about-image" alt="ptoks" />
+                    </Col>
+                    <Col className="lg-6 offset-lg-1 md-6 sm-12">
+                        <Box className="about-right-content">
+                            <SectionTitle>
+                                <SectionBackground>
+                                    <Heading as="h1">
+                                        People Token Exchange
+                                    </Heading>
+                                </SectionBackground>
+
+                                <Text>
+                                    Know your MarketCap. Invest In someone else's future. Leven Network People token allows anyone to start their own token on www.ptoks.com. One you can gain value as you progress in life. Whether you are a social influencer, a scientist or student athlete, with Ptoks.com you can carry a MarketCap forever. It's as easy as setting up a social media account and ready to trade your new token on the Leven Network People Token Exchange. Start your token today and Leventokens will make the rest happen for your launch to the moon.
+                                </Text>
+                            </SectionTitle>
+
+                            <Box className="about-btn-wrapper">
+                                <a className="btn" href="https://www.tokscity.com" target="_blank">
+                                    Join the Waitlist
                                 </a>
                             </Box>
                         </Box>

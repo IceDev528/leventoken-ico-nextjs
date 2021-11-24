@@ -53,7 +53,6 @@ body {
     background-size: cover;
     background-position: center center;
 }
-
 h1,
 h2,
 h3,

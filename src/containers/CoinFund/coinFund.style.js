@@ -93,7 +93,7 @@ const CoinFundWrapper = styled.div`
     }
   }
   .countBoxItem {
-    min-width: 100px;
+    min-width: 90px;
     position: relative;
     text-align: center;
     display: flex;
