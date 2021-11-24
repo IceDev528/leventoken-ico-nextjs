@@ -8,7 +8,7 @@ import Data from "./utility/data.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu";
 import NavigationWrap from "./navigation.style";
 
-const Navigation = () => {
+const Navigation = (props) => {
   const [expand, setExpand] = useState(false);
   const [scrolled, setScrolled] = React.useState(false);
 
@@ -49,6 +49,8 @@ const Navigation = () => {
             <ScrollspyMenu
               className={`collapsed ${expand ? "is-expanded" : ""}`}
               menuItems={Data.menuItems}
+              connectWallet = {props.connectWallet}
+              walletAddress = {props.walletAddress}
             />
           </nav>
         </div>

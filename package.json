@@ -37,7 +37,9 @@
     "react-tabs": "^3.1.0",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "web3": "^1.6.1",
+    "web3-utils": "^1.6.1"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^4.0.0",

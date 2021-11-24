@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { AbiItem, toWei } from 'web3-utils';
+import Web3 from "web3";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 
@@ -20,6 +22,86 @@ import theme from "assets/theme/theme";
 import GlobalStyle from "assets/theme";
 
 const Home = () => {
+
+  const contractAddress = "0xA929144dA9bf0A97bcA9B958182028Ec3c86Da07";
+  let web3;
+
+  const [walletAddress, setWalletAddress] = useState("");
+
+  useEffect(async () => {
+    try {
+      await checkAccount();
+    } catch(e) {
+      console.log(e);
+    }
+  }, []);
+
+  async function checkAccount() {
+    try {
+      if (window.ethereum) {
+        await connectWallet();
+      }
+      const accounts = await web3.eth.getAccounts();
+      setWalletAddress(accounts[0]);
+    } catch(e) {
+      console.log(e);
+    }
+  }
+
+  const connectWallet = async() => {
+    if (window.ethereum) {
+      try {
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
+        web3 = new Web3(window.ethereum);
+      } catch (err) {
+        console.log('user did not add account...', err)
+      }
+    } else {
+      checkAccount();
+    }
+  }
+
+  const airdrop = async() => {
+    try {
+      await checkAccount();
+      const presaleContract = new web3.eth.Contract(
+        PresaleContract.abi,
+        contractAddress
+      );
+      const response = await presaleContract.methods.airdrop().send({ from: walletAddress });
+      console.log(response);
+    } catch(e) {
+      console.log(e);
+    }
+  }
+
+  const buyToken = async() => {
+    try {
+      await checkAccount();
+
+      const presaleContract = new web3.eth.Contract(
+        PresaleContract.abi,
+        contractAddress
+      );
+
+      const amount = buyAmount; 
+      const price = 0.00001 * amount;
+      console.log(contractAddress);
+      const response = await presaleContract.methods.presale(amount).send({ 
+        from: walletAddress,
+        value: toWei(price.toString(), "ether"),
+        gas: 300000,
+      });
+      console.log(response);
+      console.log("buyToken end");
+
+      await getPresaledAmount();
+      await getRemainPresalAmount();
+    } catch(e) {
+      console.log(e);
+    }
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -30,7 +112,7 @@ const Home = () => {
       </Head>
 
       <GlobalStyle />
-      <Navigation />
+      <Navigation connectWallet = {checkAccount} walletAddress = {walletAddress} />
       <Banner />
       <Service />
       <CoinFund />
