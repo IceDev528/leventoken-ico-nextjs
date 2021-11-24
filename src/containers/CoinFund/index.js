@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Link from "next/link";
 import CountdownTimer from "react-component-countdown-timer";
 import Modal from 'react-modal';
@@ -49,6 +49,7 @@ const CoinFund = () => {
       borderRadius: '10px',
       border: 'none',
       padding: '10px',
+      marginTop: '20px',
       marginLeft: '20px',
       marginBottom: '20px',
       fontFamily: 'MuseoSans'
@@ -69,12 +70,17 @@ const CoinFund = () => {
       top: '0',
       right: '0',
       width: 'fit-content'
+    },
+    highlight: {
+      border: '2px solid red'
     }
   };
 
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [tokenAmount, setTokenAmount] = React.useState(0);
+  const [showHighlight, setHighlight] = React.useState(false);
+
   const tokenByETH = 0.00025;
 
   function openModal() {
@@ -90,7 +96,8 @@ const CoinFund = () => {
   }
 
   function getAmount() {
-    alert(tokenAmount * tokenValule);
+    if (tokenAmount < 10000) alert('Minimum is $10,000, please try again');
+    setHighlight(true);
   }
   return (
     <CoinFundWrapper id="presale">
@@ -121,10 +128,18 @@ const CoinFund = () => {
                 style={customStyles}
                 contentLabel="Buy Leventoken"
               >
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Buy LEVEN</h2>
                 <button onClick={closeModal} style={customStyles.close}>✗</button>
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>1 LEVEN to $0.01</h2>
+                <p>Presale Starts February 26 2022</p>
+                <p>Public Sale March 1st 2022</p>
+                <p>No Minimum</p>
+                <p>Private sale ongoing</p>
+                <p>25% DISCOUNT, Minimum $10,000</p>
+                <div style={customStyles.highlight}>
+                  <h3>ETH Required To Buy</h3>
+                </div>
                 <div>
-                  ETH Amount: 
+                  LEVEN Amount:
                   <input 
                     type="number" 
                     className="token-amount" 
@@ -132,7 +147,7 @@ const CoinFund = () => {
                     onChange={amountHandler}
                   />
                 </div>
-                <div>LEVEN : { tokenAmount / tokenByETH }</div>
+                <div>ETH Amount:  : { tokenAmount * tokenByETH }</div>
                 <Button onClick={getAmount} className="btn btn-fill" style={customStyles.buy}>Buy</Button>
               </Modal>
             </Box>

@@ -8,7 +8,7 @@ import Heading from 'reusecore/Heading';
 import Text from 'reusecore/Text';
 import Image from 'reusecore/Image';
 
-import CoinLogo from 'assets/images/icons/coin-logo.svg';
+import CoinLogo from 'assets/images/logo/coin-logo.svg';
 
 import particleTopLeft from 'assets/images/particles/banner/particle-top-left.png';
 import particleUnderLogo from 'assets/images/particles/banner/particle-under-logo.png';
