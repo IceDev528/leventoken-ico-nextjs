@@ -7,13 +7,8 @@ import Box from "reusecore/Box";
 import Heading from "reusecore/Heading";
 import Image from "reusecore/Image";
 import StatisticsSectionWrapper from "./statistics.style";
-
-const TokenDistribution = dynamic(() => import('./tokenDistribution'), {
-  ssr: false
-})
-const FundsAllocation = dynamic(() => import('./fundsAllocation'), {
-  ssr: false
-})
+import FundsAllocation from "assets/images/distribution/funds-allocation.svg";
+import TokenDistribution from "assets/images/distribution/token-distribution.svg";
 
 const Statistics = () => {
   return (
@@ -23,14 +18,14 @@ const Statistics = () => {
           <Row>
             <Col className="md-6 sm-6">
               <Box className="statistics-image">
-                <Heading as="h2">Token Distribution</Heading>
-                <FundsAllocation />
+                <Heading as="h2">Funds Allocation</Heading>
+                <img src={FundsAllocation} width="100%" />
               </Box>
             </Col>
             <Col className="md-6 sm-6">
               <Box className="statistics-image">
-                <Heading as="h2">Funds Allocation</Heading>
-                <TokenDistribution />
+                <Heading as="h2">Token Distribution</Heading>
+                <img src={TokenDistribution} width="100%"/>
               </Box>
             </Col>
           </Row>

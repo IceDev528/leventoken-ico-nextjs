@@ -109,8 +109,7 @@ const CoinFund = () => {
               >
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Buy LevenToken</h2>
                 <div class="token-input-form">
-                  <input type="number" className="token-amount" style={customStyles.input} onChange={amountHandler}/>
-                  LEVEN
+                  Token Amount: <input type="number" className="token-amount" style={customStyles.input} onChange={amountHandler}/>
                 </div>
                 <Button onClick={getAmount} className="btn btn-fill" style={customStyles.button}>Buy</Button>
               </Modal>
