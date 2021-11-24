@@ -17,8 +17,13 @@ import { withTheme } from "styled-components";
 Modal.setAppElement('body');
 
 const CoinFund = (props) => {
-  const settings = { 
-    count: 7948800,
+  let msDiff = new Date("March 01, 2022").getTime() - new Date().getTime();
+  let countSeconds = Math.floor(msDiff / 1000);
+
+  const [saleStart, setSaleStart] = useState(countSeconds);
+
+  const settings = {
+    count: saleStart,
     showTitle: true,
     size: 60,
     labelSize: 14,
