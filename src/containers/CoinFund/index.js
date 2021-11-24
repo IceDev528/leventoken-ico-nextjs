@@ -39,7 +39,7 @@ const CoinFund = () => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      background: 'linear-gradient(94deg,rgba(200, 56, 231, 1) 0%,rgba(31, 42, 213, 1) 100%)',
+      background: '#290E59',
       textAlign: 'center',
       minWidth: '300px'
     },
@@ -51,10 +51,17 @@ const CoinFund = () => {
       marginRight: '10px',
       marginBottom: '30px'
     },
-    button: {
-      background: '#29115d',
+    buy: {
+      background: 'linear-gradient(94deg,rgba(200, 56, 231, 1) 0%,rgba(31, 42, 213, 1) 100%)',
       color: 'white',
-      border: '1px solid white'
+      border: 'none'
+    },
+    close: {
+      color: 'white',
+      position: 'absolute',
+      top: '0',
+      right: '0',
+      width: 'fit-content'
     }
   };
 
@@ -107,11 +114,12 @@ const CoinFund = () => {
                 style={customStyles}
                 contentLabel="Buy LevenToken"
               >
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Buy LevenToken</h2>
-                <div class="token-input-form">
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Buy Leventoken</h2>
+                <button onClick={closeModal} style={customStyles.close}>✗</button>
+                <div>
                   Token Amount: <input type="number" className="token-amount" style={customStyles.input} onChange={amountHandler}/>
                 </div>
-                <Button onClick={getAmount} className="btn btn-fill" style={customStyles.button}>Buy</Button>
+                <Button onClick={getAmount} className="btn btn-fill" style={customStyles.buy}>Buy</Button>
               </Modal>
             </Box>
           </Col>
@@ -120,13 +128,6 @@ const CoinFund = () => {
               <Text> Leventoken ICO Progress </Text>
               <CountdownTimer {...settings} />
             </Box>
-            <Box className="progressbar-wrapper">
-              <Box className="progressbar">
-                <Text as="span">$2,000,000</Text>
-              </Box>
-              <Text as="span">$20,000,000</Text>
-            </Box>
-
             <Box className="payment-getway">
               <Text as="span">
                 {" "}
