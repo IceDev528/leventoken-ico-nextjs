@@ -38,8 +38,7 @@ const Faq = () => {
                 <Heading>Frequently asked questions</Heading>
               </SectionBackground>
               <Text>
-                Attention in when in just something bread not hundred well, muff
-                value emerge on the known officers.
+                Trade value for goods and services should be set only by trading parties, accessibility to trade should be free
               </Text>
             </SectionTitle>
           </Col>
@@ -72,7 +71,7 @@ const Faq = () => {
                             </IconWrapper>
                           </AccordionTitle>
                           <AccordionBody>
-                            <Text> {item.body}</Text>
+                            <Text> {item.body} </Text>
                           </AccordionBody>
                         </AccordionItem>
                       ))}
