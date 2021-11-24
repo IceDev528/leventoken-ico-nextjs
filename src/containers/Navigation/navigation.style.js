@@ -123,7 +123,7 @@ const NavigationWrap =  styled.header`
     margin-top: 8px;
     transition: all 0.8s cubic-bezier(0.3, 0.8, 0.2, 1) 0s;
     img{
-      width: 135px;
+      width: 100px;
     }
   }
   &.scrolled{ 
@@ -134,7 +134,7 @@ const NavigationWrap =  styled.header`
       border-color: transparent
     }
     .logo{
-        width: 100px;
+        width: 75px;
     } 
     .nav{
       li{
@@ -201,7 +201,7 @@ const NavigationWrap =  styled.header`
       width: 100%;
       display: block;
       margin: 7px 0 0 0;
-      img{width: 110px;}
+      img{width: 75px;}
     }
     .mobile-menu-icon {
       display: inline-block;
