@@ -28,7 +28,7 @@ Modal.setAppElement('body');
 
 const Home = () => {
 
-  const contractAddress = "0xA60C00bF6EDF4Cc77107ba736E5c7d886799C107";
+  const contractAddress = "0x1606216ecE254cb0cfB6804474Ac9Ea0319F1b87";
   const tokenByETH = 0.000025;
   let web3;
   let prisaleContract;
@@ -46,7 +46,7 @@ const Home = () => {
 
   async function checkAccount() {
     try {
-      if (checkMetaMask() == true) {
+      if (await checkMetaMask() == true) {
         if (window.ethereum) {
           if (await connectWallet() == false) {
             return false;
@@ -66,13 +66,7 @@ const Home = () => {
   }
 
   const checkMetaMask = async() => {
-    window.addEventListener('load', function() {
-      if (typeof web3 !== 'undefined') {
-        return true;
-      } else {
-        return false;
-      }
-    });
+    return true;
   }
 
   const connectWallet = async() => {
