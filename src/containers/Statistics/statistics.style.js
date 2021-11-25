@@ -50,7 +50,7 @@ const StatisticsSectionWrapper = styled.div`
         text-align: center;
         img {
           margin: 50px auto 0px auto;
-          width: 70%;
+          width: 100%;
         }
 
         &:last-child {
