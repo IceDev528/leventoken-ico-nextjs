@@ -43,6 +43,14 @@ const CoinFundWrapper = styled.div`
         rgba(200, 56, 231, 1) 100%
       );
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      background: gray;
+      &:hover {
+        background: gray;
+      }
+    }
   }
 
   .progressbar-wrapper {

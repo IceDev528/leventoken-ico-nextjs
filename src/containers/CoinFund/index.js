@@ -17,13 +17,16 @@ import { withTheme } from "styled-components";
 Modal.setAppElement('body');
 
 const CoinFund = (props) => {
-  let msDiff = new Date("March 01, 2022").getTime() - new Date().getTime();
-  let countSeconds = Math.floor(msDiff / 1000);
+  let saleDiff = new Date("March 01, 2022").getTime() - new Date().getTime();
+  let preCount = Math.floor(saleDiff / 1000);
+  let privateDiff = new Date("November 01, 2021").getTime() - new Date().getTime();
+  let privateCount = Math.floor(privateDiff / 1000);
 
-  const [saleStart, setSaleStart] = useState(countSeconds);
+  const [preSaleStart, setPreSaleStart] = useState(preCount);
+  const [privateSaleStart, setPrivateSaleStart] = useState(privateCount);
 
   const settings = {
-    count: saleStart,
+    count: preSaleStart,
     showTitle: true,
     size: 60,
     labelSize: 14,
@@ -106,6 +109,14 @@ const CoinFund = (props) => {
       setHighlight(true);
     }
   }
+
+  let buyButton;
+  if (privateCount > 0) {
+    buyButton = <Button onClick={openModal} className="btn btn-fill" disabled>Buy Leventoken</Button>;
+  } else {
+    buyButton = <Button onClick={openModal} className="btn btn-fill">Buy Leventoken</Button>;
+  }
+
   return (
     <CoinFundWrapper id="presale">
       <Container>
@@ -126,7 +137,7 @@ const CoinFund = (props) => {
               </SectionTitle>
 
               <Box className="btn-wrapper">
-                <Button onClick={openModal} className="btn btn-fill">Buy Leventoken</Button>
+                {buyButton}
               </Box>
               
               <Modal
