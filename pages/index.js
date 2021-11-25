@@ -70,9 +70,9 @@ const Home = () => {
   }
 
   const connectWallet = async() => {
-    const installMetaMast = await checkMetaMask();
-    console.log(installMetaMast);
-    if (installMetaMast == false) {
+    const installMetaMask = await checkMetaMask();
+    console.log(installMetaMask);
+    if (installMetaMask == false) {
       return false;
     }
     if (window.ethereum) {
@@ -160,7 +160,7 @@ const Home = () => {
       borderRadius: '15px'
     },
     alert: {
-      color: 'red'
+      color: '#fff'
     },
     close: {
       color: 'white',
@@ -223,7 +223,7 @@ const Home = () => {
         contentLabel="Airdrop alert"
       >
         <button onClick={closeModal} style={modalStyles.close}>✗</button>
-        <h2 style={modalStyles.alert}>Alert</h2>
+        <h2 style={modalStyles.alert}>Airdrop Notification</h2>
         <p>You have already claimed your airdrops, use your referral link to get some more.</p>
       </Modal>
     </ThemeProvider>

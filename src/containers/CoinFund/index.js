@@ -17,16 +17,13 @@ import { withTheme } from "styled-components";
 Modal.setAppElement('body');
 
 const CoinFund = (props) => {
-  let saleDiff = new Date("March 01, 2022").getTime() - new Date().getTime();
-  let preCount = Math.floor(saleDiff / 1000);
-  let privateDiff = new Date("November 01, 2021").getTime() - new Date().getTime();
-  let privateCount = Math.floor(privateDiff / 1000);
-
-  const [preSaleStart, setPreSaleStart] = useState(preCount);
-  const [privateSaleStart, setPrivateSaleStart] = useState(privateCount);
+  let preSaleDiff = new Date("March 01, 2022").getTime() - new Date().getTime();
+  let preSaleCount = Math.floor(preSaleDiff / 1000);
+  let privateSaleDiff = new Date("November 26, 2021").getTime() - new Date().getTime();
+  let privateSaleCount = Math.floor(privateSaleDiff / 1000);
 
   const settings = {
-    count: preSaleStart,
+    count: preSaleCount,
     showTitle: true,
     size: 60,
     labelSize: 14,
@@ -81,6 +78,9 @@ const CoinFund = (props) => {
     },
     highlight: {
       border: '2px solid #fff'
+    },
+    email: {
+      color: "#fff"
     }
   };
 
@@ -110,7 +110,7 @@ const CoinFund = (props) => {
   }
 
   let buyButton;
-  if (privateCount > 0) {
+  if (privateSaleCount > 0) {
     buyButton = <Button onClick={openModal} className="btn btn-fill" disabled>Buy Leventoken</Button>;
   } else {
     buyButton = <Button onClick={openModal} className="btn btn-fill">Buy Leventoken</Button>;
@@ -129,9 +129,7 @@ const CoinFund = (props) => {
                   </Heading>
                 </SectionBackground>
                 <Text>
-                  Presale date will be announced soon. Our private sale is open now. Please connect your wallet. Contact 
-                  <a href="info@levenproject.org" target="_blank"><u> info@levenproject.org </u></a>
-                  for more information
+                  Presale date will be announced soon. Our private sale is open now. Please connect your wallet. Contact <b style={customStyles.email}>info@levenproject.org</b> for more information
                 </Text>
               </SectionTitle>
 
