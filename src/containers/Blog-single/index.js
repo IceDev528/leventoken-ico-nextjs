@@ -20,11 +20,6 @@ import Sidebar from "../../components/Blog-sidebar";
 
 import BlogThumb from "assets/images/blog/post/blog-post-5.png";
 
-import AuthorThumb2 from "assets/images/testimonial/testimonial-thumb-2.jpg";
-import AuthorThumb3 from "assets/images/testimonial/testimonial-thumb-3.jpg";
-import AuthorThumb4 from "assets/images/testimonial/testimonial-thumb-4.jpg";
-import AuthorThumb5 from "assets/images/testimonial/testimonial-thumb-5.jpg";
-
 import BlogPageWrapper from "./blogSingle.style";
 
 const BlogSinglePage = () => {
@@ -130,7 +125,7 @@ const BlogSinglePage = () => {
                           <Box className="post-comment-block">
                             <Box className="author-avatar">
                               <Image
-                                src={AuthorThumb2}
+                                src=""
                                 alt="cryptik comments author"
                               />
                             </Box>
@@ -162,7 +157,7 @@ const BlogSinglePage = () => {
                               <Box className="post-comment-block">
                                 <Box className="author-avatar">
                                   <Image
-                                    src={AuthorThumb3}
+                                    src=""
                                     alt="cryptik comments author"
                                   />
                                 </Box>
@@ -196,7 +191,7 @@ const BlogSinglePage = () => {
                               <Box className="post-comment-block">
                                 <Box className="author-avatar">
                                   <Image
-                                    src={AuthorThumb4}
+                                    src=""
                                     alt="cryptik comments author"
                                   />
                                 </Box>
@@ -232,7 +227,7 @@ const BlogSinglePage = () => {
                           <Box className="post-comment-block">
                             <Box className="author-avatar">
                               <Image
-                                src={AuthorThumb5}
+                                src=""
                                 alt="cryptik comments author"
                               />
                             </Box>
