@@ -27,7 +27,7 @@ export default {
         items: [
             {
                 title: "What is the money raised from ICOs used for?",
-                body: "Cryptik - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital. Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others."
+                body: "Money raised is used to develop the network software and marketing. We also have to get all legal paperwork and security items taken care of for the network."
             },
             {
                 title: "What rights do buyers of tokens get?",

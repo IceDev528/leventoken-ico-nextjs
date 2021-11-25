@@ -77,7 +77,7 @@ const CoinFund = (props) => {
       width: 'fit-content'
     },
     highlight: {
-      border: '2px solid red'
+      border: '2px solid #fff'
     }
   };
 
