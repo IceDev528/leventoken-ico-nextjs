@@ -73,7 +73,7 @@ const About = () => {
                             </SectionTitle>
 
                             <Box className="about-btn-wrapper">
-                                <a className="btn" href="https://www.ptoks.com" target="_blank">
+                                <a className="btn" href="https://www.tokscity.com" target="_blank">
                                     Join the Waitlist
                                 </a>
                             </Box>
@@ -99,7 +99,7 @@ const About = () => {
                             </SectionTitle>
 
                             <Box className="about-btn-wrapper">
-                                <a className="btn" href="https://www.tokscity.com" target="_blank">
+                                <a className="btn" href="https://www.ptoks.com" target="_blank">
                                     Join the Waitlist
                                 </a>
                             </Box>
