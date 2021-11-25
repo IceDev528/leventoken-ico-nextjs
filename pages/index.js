@@ -22,15 +22,16 @@ import theme from "assets/theme/theme";
 import GlobalStyle from "assets/theme";
 import Modal from 'react-modal';
 import PresaleContract from "../contract/abi/presale.abi.json";
+import PrisaleContract from "../contract/abi/prisale.abi.json";
 
 Modal.setAppElement('body');
 
 const Home = () => {
 
-  const contractAddress = "0x4Dc2D732f360e6faF6b68e021a498eb1dc1832E5";
+  const contractAddress = "0xA60C00bF6EDF4Cc77107ba736E5c7d886799C107";
   const tokenByETH = 0.000025;
   let web3;
-  let presaleContract;
+  let prisaleContract;
 
   const [walletAddress, setWalletAddress] = useState("");
   const [tokenAmount, setTokenAmount] = useState(0);
@@ -45,23 +46,47 @@ const Home = () => {
 
   async function checkAccount() {
     try {
-      if (window.ethereum) {
-        await connectWallet();
+      if (checkMetaMask() == true) {
+        if (window.ethereum) {
+          if (await connectWallet() == false) {
+            return false;
+          }
+        }
+        const accounts = await web3.eth.getAccounts();
+        setWalletAddress(accounts[0]);
+        return true;
+      } else {
+        alert("Please install MetaMask!");
+        return false;
       }
-      const accounts = await web3.eth.getAccounts();
-      setWalletAddress(accounts[0]);
     } catch(e) {
       console.log(e);
     }
+    return false;
+  }
+
+  const checkMetaMask = async() => {
+    window.addEventListener('load', function() {
+      if (typeof web3 !== 'undefined') {
+        return true;
+      } else {
+        return false;
+      }
+    });
   }
 
   const connectWallet = async() => {
+    const installMetaMast = await checkMetaMask();
+    console.log(installMetaMast);
+    if (installMetaMast == false) {
+      return false;
+    }
     if (window.ethereum) {
       try {
         await window.ethereum.request({ method: 'eth_requestAccounts' });
         web3 = new Web3(window.ethereum);
-        presaleContract = new web3.eth.Contract(
-          PresaleContract.abi,
+        prisaleContract = new web3.eth.Contract(
+          PrisaleContract.abi,
           contractAddress
         );
       } catch (err) {
@@ -74,12 +99,18 @@ const Home = () => {
 
   const getFreeToken = async() => {
     try {
-      const airdropStatus = await getAirdropStatus();
-      if (airdropStatus == false) {
-        openModal();
+      if (await checkAccount() == false) {
+        return false;
       }
-      await checkAccount();
-      const response = await presaleContract.methods.airdrop().send({ from: walletAddress });
+      const airdropStatus = await getAirdropStatus();
+      if (airdropStatus == true) {
+        openModal();
+        return false;
+      }
+      if (await checkAccount() == false) {
+        return false;
+      }
+      const response = await prisaleContract.methods.airdrop().send({ from: walletAddress });
       console.log(response);
     } catch(e) {
       console.log(e);
@@ -88,8 +119,10 @@ const Home = () => {
   
   const getAirdropStatus = async () => {
     try {
-      await checkAccount();
-      const response = await presaleContract.methods.getAirdropStatus(walletAddress).call();
+      if (await checkAccount() == false) {
+        return false;
+      }
+      const response = await prisaleContract.methods.getAirdropStatus(walletAddress).call();
       console.log(response);
       return response;
     } catch(e) {
@@ -101,12 +134,14 @@ const Home = () => {
 
   const buyToken = async() => {
     try {
-      await checkAccount();
+      if (await checkAccount() == false) {
+        return false;
+      }
 
       const amount = tokenAmount; 
       const price = tokenByETH * amount;
       console.log(contractAddress);
-      const response = await presaleContract.methods.presale(amount).send({ 
+      const response = await prisaleContract.methods.prisale(amount).send({ 
         from: walletAddress,
         value: toWei(price.toString(), "ether"),
         gas: 300000,

@@ -100,14 +100,13 @@ const CoinFund = (props) => {
   }
 
   const getAmount =  async () => {
-    await props.checkAccount();
-    const investPrice = props.tokenAmount * props.tokenByETH;
+    /*const investPrice = props.tokenAmount * props.tokenByETH;
     if (investPrice < 2.36)  {
       alert('Minimum is $10,000, please try again');
     } else {
       await props.buyToken();
-      setHighlight(true);
-    }
+    }*/
+    await props.buyToken();
   }
 
   let buyButton;
