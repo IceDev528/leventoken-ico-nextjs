@@ -19,7 +19,7 @@ Modal.setAppElement('body');
 const CoinFund = (props) => {
   let preSaleDiff = new Date("March 01, 2022").getTime() - new Date().getTime();
   let preSaleCount = Math.floor(preSaleDiff / 1000);
-  let privateSaleDiff = new Date("November 26, 2021").getTime() - new Date().getTime();
+  let privateSaleDiff = new Date("November 25, 2021").getTime() - new Date().getTime();
   let privateSaleCount = Math.floor(privateSaleDiff / 1000);
 
   const settings = {
