@@ -16,13 +16,13 @@ const Statistics = () => {
       <Box className="statistics-wrapper">
         <Container>
           <Row>
-            <Col className="md-6 sm-6">
+            <Col className="md-6 sm-6 xs-12">
               <Box className="statistics-image">
                 <Heading as="h2">Funds Allocation</Heading>
                 <img src={FundsAllocation} width="100%" />
               </Box>
             </Col>
-            <Col className="md-6 sm-6">
+            <Col className="md-6 sm-6 xs-12">
               <Box className="statistics-image">
                 <Heading as="h2">Token Distribution</Heading>
                 <img src={TokenDistribution} width="100%"/>

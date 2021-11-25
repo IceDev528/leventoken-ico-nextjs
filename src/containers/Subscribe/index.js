@@ -28,7 +28,7 @@ const Subscribe = () => {
                   </SectionTitle>
                 </Col>
               </Row>
-              <Row>
+              {/* <Row>
                 <Col className="lg-8 offset-lg-2 xs-12">
                   <Box className="form-box">
                     <Input
@@ -38,7 +38,7 @@ const Subscribe = () => {
                     <Button>Subscribe</Button>
                   </Box>
                 </Col>
-              </Row>
+              </Row> */}
             </Box>
           </Col>
         </Row>
