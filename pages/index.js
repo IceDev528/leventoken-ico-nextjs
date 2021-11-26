@@ -198,15 +198,16 @@ const Home = () => {
         connectWallet = {checkAccount} 
         walletAddress = {walletAddress} 
       />
-      <Banner getFreeToken = {getFreeToken} />
-      <Service />
-      <CoinFund 
+      <Banner 
+        getFreeToken = {getFreeToken}
         tokenAmount = {tokenAmount} 
         setTokenAmount = {setTokenAmount} 
         checkAccount = {checkAccount}
         buyToken = {buyToken}
-        tokenByETH = {tokenByETH}
+        tokenByETH = {tokenByETH} 
       />
+      <Service />
+      <CoinFund />
       <About />
       {/* <Awards /> */}
       {/* <UserMap /> */}
