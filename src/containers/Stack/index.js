@@ -20,10 +20,6 @@ const Stack = () => {
             <Col className="offset-lg-3 offset-md-1 lg-6 md-10  sm-12">
               <SectionTitle>
                 <Heading> Technology we use</Heading>
-                <Text>
-                  Attention in when in just something bread not hundred well,
-                  muff value emerge on the known officers.
-                </Text>
               </SectionTitle>
             </Col>
           </Row>
