@@ -138,6 +138,16 @@ const BannerWrapper = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 535px) { 
+    .banner-content {
+      .banner-btn{
+        .btn{
+          width: 155px;
+          padding: 18px 5px;
+        }
+      }
+    }
+  }
   @media only screen and (max-width: 480px) { 
     .banner-content {
       h1{
@@ -145,6 +155,12 @@ const BannerWrapper = styled.div`
         line-height: 50px;
         br{
           display: none;
+        }
+      }
+      .banner-btn{
+        .btn{
+          width: 155px;
+          padding: 18px 5px;
         }
       }
       .text{

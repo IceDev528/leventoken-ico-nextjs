@@ -123,8 +123,9 @@ const Banner = (props) => {
                 BUSINESS | USERS | DEVELOPERS | BANKS
               </Text>
               <Box className="banner-btn">
-                <a onClick={props.getFreeToken} className="btn btn-fill">Get Free Leventoken</a>
+                <a className="btn btn-fill">Import Leventoken</a>
                 {buyButton}
+                <a onClick={props.getFreeToken} className="btn btn-fill">Get Free Leventoken</a>
               </Box>
 
               <Modal
