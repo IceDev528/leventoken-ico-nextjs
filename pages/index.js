@@ -10,13 +10,12 @@ import Service from "containers/Service";
 import CoinFund from "containers/CoinFund";
 import About from "containers/About";
 import Awards from "containers/Awards";
-import UserMap from "containers/UserMap";
+import RoadMap from "containers/UserMap";
 import Wallet from "containers/Wallet";
 import Statistics from "containers/Statistics";
 import Stack from "containers/Stack"; 
 import Faq from "containers/Faq";
 import Footer from "containers/Footer";
-
 import FavIcon from "assets/images/fav-icon.svg";
 import theme from "assets/theme/theme";
 import GlobalStyle from "assets/theme";
@@ -212,6 +211,7 @@ const Home = () => {
       {/* <Awards /> */}
       {/* <UserMap /> */}
       <Wallet />
+      <RoadMap />
       <Statistics />
       <Faq />
       <Stack />

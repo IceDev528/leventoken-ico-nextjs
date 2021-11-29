@@ -4,8 +4,11 @@ const UserMapWrapper = styled.div`
   padding: 85px 0;
 
   .usermap-wrapper {
-    img {
-      margin-top: 37px;
+    .roadmap-block {
+      padding: 40px 20px 20px 20px;
+      background: #2B1867;
+      margin-top: 20px;
+      text-align: center;
     }
   }
   
