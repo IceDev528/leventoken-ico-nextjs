@@ -45,7 +45,9 @@ const Banner = (props) => {
       marginTop: '20px',
       marginLeft: '20px',
       marginBottom: '20px',
-      fontFamily: 'MuseoSans'
+      fontFamily: 'MuseoSans',
+      fontWeight: 'bold',
+      fontSize: '20px'
     },
     buy: {
       background: 'linear-gradient(94deg,rgba(200, 56, 231, 1) 0%,rgba(31, 42, 213, 1) 100%)',
@@ -65,10 +67,15 @@ const Banner = (props) => {
       width: 'fit-content'
     },
     highlight: {
-      border: '2px solid #fff'
+      border: '2px solid #fff',
+      borderRadius: '15px'
     },
     email: {
       color: "#fff"
+    },
+    eth: {
+      fontWeight: 'bold',
+      fontSize: '20px'
     }
   };
 
@@ -153,7 +160,7 @@ const Banner = (props) => {
                     onChange={amountHandler}
                   />
                 </div>
-                <div>ETH Amount:  : { props.tokenAmount * props.tokenByETH }</div>
+                <div style={customStyles.eth}>ETH Amount:  : { props.tokenAmount * props.tokenByETH }</div>
                 <Button onClick={getAmount} className="btn btn-fill" style={customStyles.buy}>Buy</Button>
               </Modal>
             </Box>
