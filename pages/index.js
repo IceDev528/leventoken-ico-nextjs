@@ -225,7 +225,8 @@ const Home = () => {
       >
         <button onClick={closeModal} style={modalStyles.close}>✗</button>
         <h2 style={modalStyles.alert}>Airdrop Notification</h2>
-        <p>You have already claimed your airdrops, use your referral link to get some more.</p>
+        <p>You have already claimed your airdrops, get a referral link, share and get some more. All your friends get free tokens too</p>
+        <a href="https://leventoken.com/" target="_blank">https://leventoken.com/</a>
       </Modal>
     </ThemeProvider>
   );
