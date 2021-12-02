@@ -27,8 +27,8 @@ Modal.setAppElement('body');
 
 const Home = () => {
 
-  const contractAddress = "0x2a2F7aA6709de7e36B9Ce6fb81BAF09c1debF547";
-  const tokenByETH = 0.000025;
+  const contractAddress = "0x469d77E34225D0588f900355170A9Ab7d22887c0";
+  const tokenByETH = 0.00001875;
   let web3;
   let prisaleContract;
 
@@ -183,6 +183,34 @@ const Home = () => {
     setIsOpen(false);
   }
 
+  const importToken = async () => {
+    const tokenAddress = '0x5f50bAC24B3721F49Aa1CDE8E2dA215753ef30e2';
+    const tokenSymbol = 'LEVEN';
+    const tokenDecimals = 18;
+    try {
+      // wasAdded is a boolean. Like any RPC method, an error may be thrown.
+      const wasAdded = await ethereum.request({
+        method: 'wallet_watchAsset',
+        params: {
+          type: 'ERC20', // Initially only supports ERC20, but eventually more!
+          options: {
+            address: tokenAddress, // The address that the token is at.
+            symbol: tokenSymbol, // A ticker symbol or shorthand, up to 5 chars.
+            decimals: tokenDecimals, // The number of decimals in the token
+          },
+        },
+      });
+
+      if (wasAdded) {
+        console.log('Thanks for your interest!');
+      } else {
+        console.log('Your loss!');
+      }
+    } catch(e) {
+      console.log(e);
+    }
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -199,6 +227,7 @@ const Home = () => {
       />
       <Banner 
         getFreeToken = {getFreeToken}
+        importToken = {importToken}
         tokenAmount = {tokenAmount} 
         setTokenAmount = {setTokenAmount} 
         checkAccount = {checkAccount}
