@@ -88,6 +88,7 @@ const Banner = (props) => {
 
   function closeModal() {
     setIsOpen(false);
+    props.tokenByETH = 0;
   }
 
   function amountHandler(e) {
@@ -95,12 +96,12 @@ const Banner = (props) => {
   }
 
   const getAmount =  async () => {
-    /*const investPrice = props.tokenAmount * props.tokenByETH;
+    const investPrice = props.tokenAmount * props.tokenByETH;
     if (investPrice < 2.36)  {
       alert('Minimum is $10,000, please try again');
     } else {
       await props.buyToken();
-    }*/
+    }
     await props.buyToken();
   }
 
