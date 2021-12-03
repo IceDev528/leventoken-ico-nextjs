@@ -12,7 +12,7 @@ export default {
     {
       icon: businessLeven,
       title: "Businesses accept payments from customers with ZERO processing fees",
-      body: "As on owner of the network, you enjoy many benefits from accepting Leventoken for payments of your goods and services. Your business pays no fees to accept Leventokens payments Unlike a traditional bank or payment card transaction, Leventoken payments don't involve sending any sensitive customer account information through the network, No chargebacks, Each transaction can't be decrypted or reversed.",
+      body: "As an owner of the network, you enjoy many benefits from accepting Leventoken for payments of your goods and services. Your business pays no fees to accept Leventokens payments Unlike a traditional bank or payment card transaction, Leventoken payments don't involve sending any sensitive customer account information through the network, No chargebacks, Each transaction can't be decrypted or reversed.",
     },
     {
       icon: buyerLeven,
