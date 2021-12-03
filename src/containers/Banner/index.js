@@ -143,7 +143,7 @@ const Banner = (props) => {
                 contentLabel="Buy Leventoken"
               >
                 <button onClick={closeModal} style={customStyles.close}>✗</button>
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>1 LEVEN to $0.1</h2>
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>1 LEVEN to 0.000025 ETH</h2>
                 <p>Presale Starts February 26 2022</p>
                 <p>Public Sale March 1st 2022</p>
                 <p>No Minimum</p>
