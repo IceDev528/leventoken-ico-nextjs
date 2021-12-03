@@ -97,8 +97,8 @@ const Banner = (props) => {
 
   const getAmount =  async () => {
     const investPrice = props.tokenAmount * props.tokenByETH;
-    if (investPrice < 2.36)  {
-      alert('Minimum is $10,000, please try again');
+    if (investPrice < 2)  {
+      alert('Minimum is 2ETH, please try again');
     } else {
       await props.buyToken();
     }
@@ -148,7 +148,7 @@ const Banner = (props) => {
                 <p>Public Sale March 1st 2022</p>
                 <p>No Minimum</p>
                 <p>Private sale ongoing</p>
-                <p>25% DISCOUNT, Minimum $10,000</p>
+                <p>25% DISCOUNT, Minimum 2ETH</p>
                 <div style={customStyles.highlight}>
                   <h3>ETH Required To Buy</h3>
                 </div>
