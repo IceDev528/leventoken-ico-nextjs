@@ -27,7 +27,7 @@ Modal.setAppElement('body');
 
 const Home = () => {
 
-  const contractAddress = "0x8E51B612E11785be9b9304F804198FD43b3A0FD1";
+  const contractAddress = "0xE425f9721F0c91B5AD14b7cD53673Ea5184adC0D";
   const tokenByETH = 0.00001875;
   let web3;
   let prisaleContract;
