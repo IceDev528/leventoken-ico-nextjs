@@ -184,7 +184,7 @@ const Home = () => {
   }
 
   const importToken = async () => {
-    const tokenAddress = '0x5f50bAC24B3721F49Aa1CDE8E2dA215753ef30e2';
+    const tokenAddress = '0x4b3f7F7816701d1fD665f0AD6dD046Af9Cab3999';
     const tokenSymbol = 'LEVEN';
     const tokenDecimals = 18;
     try {
