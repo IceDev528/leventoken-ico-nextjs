@@ -70,7 +70,6 @@ const Home = () => {
 
   const connectWallet = async() => {
     const installMetaMask = await checkMetaMask();
-    console.log(installMetaMask);
     if (installMetaMask == false) {
       return false;
     }

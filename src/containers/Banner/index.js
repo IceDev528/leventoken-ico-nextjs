@@ -88,7 +88,6 @@ const Banner = (props) => {
 
   function closeModal() {
     setIsOpen(false);
-    props.tokenByETH = 0;
   }
 
   function amountHandler(e) {
