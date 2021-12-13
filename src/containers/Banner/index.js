@@ -101,7 +101,6 @@ const Banner = (props) => {
     } else {
       await props.buyToken();
     }
-    await props.buyToken();
   }
 
   let buyButton;
