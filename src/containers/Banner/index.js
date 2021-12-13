@@ -128,12 +128,12 @@ const Banner = (props) => {
                 A User Owned Decentralized Settlement Network For Real World Payments
               </Heading>
               <Text>
-                BUSINESS | USERS | DEVELOPERS | BANKS
+                BUSINESSES | USERS | DEVELOPERS | BANKS
               </Text>
               <Box className="banner-btn">
                 <a onClick={props.importToken} className="btn btn-fill">Import Leventoken</a>
                 {buyButton}
-                <a onClick={props.getFreeToken} className="btn btn-fill">Get Free Leventoken</a>
+                <a onClick={props.getFreeToken} className="btn btn-fill">Get 1000 LEVEN FREE</a>
               </Box>
 
               <Modal
