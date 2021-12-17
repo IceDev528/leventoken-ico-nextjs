@@ -145,7 +145,8 @@ const Banner = (props) => {
                 <p>Presale Starts February 26 2022</p>
                 <p>Public Sale March 1st 2022</p>
                 <p>No Minimum</p>
-                <p>Private sale ongoing</p>
+                <p>Private Sale Ongoing.</p>
+ <p>Import your tokens after order complete</p>
                 <p>25% DISCOUNT, Minimum 2ETH</p>
                 <div style={customStyles.highlight}>
                   <h3>ETH Required To Buy</h3>

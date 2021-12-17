@@ -5,17 +5,12 @@ const Data = {
       path: "/",
     },
     {
-      name: "White Paper",
-      path: "",
-      offset: "-100"
-    },
-    {
       name: "Tokenomics",
       path: "tokenomics",
       offset: "-120"
     },
     {
-      name: "Presale",
+      name: "Public Sale",
       path: "presale",
       offset: "-100"
     },

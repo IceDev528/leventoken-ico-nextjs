@@ -40,6 +40,9 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
         </li>
       ))}
       <li>
+        <a href="assets/lite-paper.pdf" download="Leven litepaper" target="_blank">Litepaper</a>
+      </li>
+      <li>
         <button 
           className="nav__button" 
           onClick={props.connectWallet} 
