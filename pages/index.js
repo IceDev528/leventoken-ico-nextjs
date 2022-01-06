@@ -202,6 +202,7 @@ const Home = () => {
 
       if (wasAdded) {
         console.log('Thanks for your interest!');
+        window.location.href = "https://docs.google.com/forms/d/1C47EVLSb8qa8aW5vMgKCjepvQq-pZdvKzYehCpSJr18/edit";
       } else {
         console.log('Your loss!');
       }
