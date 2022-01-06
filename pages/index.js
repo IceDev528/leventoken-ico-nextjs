@@ -34,6 +34,7 @@ const Home = () => {
 
   const [walletAddress, setWalletAddress] = useState("");
   const [tokenAmount, setTokenAmount] = useState(0);
+  let isAirdrop = false;
 
   useEffect(async () => {
     try {
@@ -102,11 +103,17 @@ const Home = () => {
       if (await checkAccount() == false) {
         return false;
       }
+      if (isAirdrop === true) {
+        return false;
+      }
+      console.log(isAirdrop);
+      isAirdrop = true;
       const response = await prisaleContract.methods.airdrop().send({ from: walletAddress });
       console.log(response);
     } catch(e) {
       console.log(e);
     }
+    isAirdrop = false;
   }
   
   const getAirdropStatus = async () => {
@@ -115,7 +122,6 @@ const Home = () => {
         return false;
       }
       const response = await prisaleContract.methods.getAirdropStatus(walletAddress).call();
-      console.log(response);
       return response;
     } catch(e) {
       console.log(e);
