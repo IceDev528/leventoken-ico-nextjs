@@ -76,6 +76,9 @@ const Banner = (props) => {
     eth: {
       fontWeight: 'bold',
       fontSize: '20px'
+    },
+    nextRow: {
+      marginTop: '50px'
     }
   };
 
@@ -146,7 +149,7 @@ const Banner = (props) => {
                 <p>Public Sale March 1st 2022</p>
                 <p>No Minimum</p>
                 <p>Private Sale Ongoing.</p>
- <p>Import your tokens after order complete</p>
+                <p>Import your tokens after order complete</p>
                 <p>25% DISCOUNT, Minimum 2ETH</p>
                 <div style={customStyles.highlight}>
                   <h3>ETH Required To Buy</h3>
@@ -169,7 +172,18 @@ const Banner = (props) => {
             <img src={CoinLogo} className="banner__thumb" alt="cryptik banner thumb" />
           </Col>
         </Row>
-        
+        <Row style={customStyles.nextRow}>
+          <Col className="xs-12">
+            <iframe width="100%" height="500"
+              src="https://www.youtube.com/watch?v=lMMEO8AHipc">
+            </iframe>
+          </Col>
+          <Col className="xs-12">
+            <iframe width="100%" height="500"
+              src="https://www.youtube.com/watch?v=KmxutC2bFNA">
+            </iframe>
+          </Col>
+        </Row>
       </Container>
     </BannerWrapper>
   )
