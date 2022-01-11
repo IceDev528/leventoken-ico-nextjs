@@ -172,7 +172,7 @@ const Banner = (props) => {
             <img src={CoinLogo} className="banner__thumb" alt="cryptik banner thumb" />
           </Col>
         </Row>
-        <Row style={customStyles.nextRow}>
+        {/* <Row style={customStyles.nextRow}>
           <Col className="xs-12">
             <iframe width="100%" height="500"
               src="https://www.youtube.com/watch?v=lMMEO8AHipc&output=embed">
@@ -183,7 +183,7 @@ const Banner = (props) => {
               src="https://www.youtube.com/watch?v=KmxutC2bFNA&output=embed">
             </iframe>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </BannerWrapper>
   )
