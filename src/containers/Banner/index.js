@@ -175,12 +175,12 @@ const Banner = (props) => {
         <Row style={customStyles.nextRow}>
           <Col className="xs-12">
             <iframe width="100%" height="500"
-              src="https://www.youtube.com/watch?v=lMMEO8AHipc">
+              src="https://www.youtube.com/watch?v=lMMEO8AHipc&output=embed">
             </iframe>
           </Col>
           <Col className="xs-12">
             <iframe width="100%" height="500"
-              src="https://www.youtube.com/watch?v=KmxutC2bFNA">
+              src="https://www.youtube.com/watch?v=KmxutC2bFNA&output=embed">
             </iframe>
           </Col>
         </Row>
