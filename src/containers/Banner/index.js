@@ -79,10 +79,22 @@ const Banner = (props) => {
       fontSize: '20px'
     },
     nextRow: {
-      marginTop: '150px'
+      marginTop: '100px'
+    },
+    videoContainer: {
+      position: 'relative',
+      overflow: 'hidden',
+      width: '100%',
+      paddingTop: '75%'
     },
     video: {
-      width: '100%'
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      bottom: '0',
+      right: '0',
+      width: '100%',
+      height:'100%'
     }
   };
 
@@ -177,15 +189,21 @@ const Banner = (props) => {
           </Col>
         </Row>
         <Row style={customStyles.nextRow}>
-          <Col className="xs-12">
-            <video controls autoPlay muted loop preload="auto" style={customStyles.video} poster={videoPosterToken}>
+          <Col className="xs-12" style={customStyles.nextRow}>
+            <div style={customStyles.videoContainer}>
+              <iframe src="https://drive.google.com/file/d/1hHrrdcUxr2l5NKOOnPxt8z3SuA5KLtOH/preview" allow="autoplay" style={customStyles.video}></iframe>
+            </div>
+            {/* <video controls autoPlay muted loop preload="auto" style={customStyles.video} poster={videoPosterToken}>
               <source src="https://drive.google.com/file/d/1GD5uZcTS4K-Sf4YSQjqwK_5Rwhu1pg76/view?usp=sharing" type="video/mp4" />
-            </video>
+            </video> */}
           </Col>
-          <Col className="xs-12">
-            <video controls autoPlay muted loop preload="auto" style={customStyles.video} poster={videoPosterIntro}>
+          <Col className="xs-12" style={customStyles.nextRow}>
+            <div style={customStyles.videoContainer}>
+              <iframe src="https://drive.google.com/file/d/1ZZ7ULEDKeYALJd1tZNTMNJJAyY8RO1ni/preview" allow="autoplay" style={customStyles.video}></iframe>
+            </div>
+            {/* <video controls autoPlay muted loop preload="auto" style={customStyles.video} poster={videoPosterIntro}>
               <source src="https://drive.google.com/file/d/124RybLuKlfGiwYyM135xuy9MvLd95mP2/view?usp=sharing" type="video/mp4" />
-            </video>
+            </video> */}
           </Col>
         </Row>
       </Container>
