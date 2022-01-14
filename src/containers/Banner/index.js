@@ -85,7 +85,7 @@ const Banner = (props) => {
       position: 'relative',
       overflow: 'hidden',
       width: '100%',
-      paddingTop: '75%'
+      paddingTop: '56.25%'
     },
     video: {
       position: 'absolute',
@@ -190,20 +190,14 @@ const Banner = (props) => {
         </Row>
         <Row style={customStyles.nextRow}>
           <Col className="xs-12" style={customStyles.nextRow}>
-            <div style={customStyles.videoContainer}>
-              <iframe src="https://drive.google.com/file/d/1hHrrdcUxr2l5NKOOnPxt8z3SuA5KLtOH/preview" allow="autoplay" style={customStyles.video}></iframe>
-            </div>
-            {/* <video controls autoPlay muted loop preload="auto" style={customStyles.video} poster={videoPosterToken}>
-              <source src="https://drive.google.com/file/d/1GD5uZcTS4K-Sf4YSQjqwK_5Rwhu1pg76/view?usp=sharing" type="video/mp4" />
-            </video> */}
+          <div style={customStyles.videoContainer}>
+            <iframe src="https://www.loom.com/embed/c1f373e752b043c480fdc4bc832d4427" frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen style={customStyles.video}></iframe>
+          </div>
           </Col>
           <Col className="xs-12" style={customStyles.nextRow}>
             <div style={customStyles.videoContainer}>
-              <iframe src="https://drive.google.com/file/d/1ZZ7ULEDKeYALJd1tZNTMNJJAyY8RO1ni/preview" allow="autoplay" style={customStyles.video}></iframe>
+              <iframe src="https://www.loom.com/embed/0b8f770b952d44e49f2ab44f91de8e0c" frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen style={customStyles.video}></iframe>
             </div>
-            {/* <video controls autoPlay muted loop preload="auto" style={customStyles.video} poster={videoPosterIntro}>
-              <source src="https://drive.google.com/file/d/124RybLuKlfGiwYyM135xuy9MvLd95mP2/view?usp=sharing" type="video/mp4" />
-            </video> */}
           </Col>
         </Row>
       </Container>
