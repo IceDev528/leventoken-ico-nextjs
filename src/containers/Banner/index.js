@@ -15,7 +15,8 @@ import particleUnderLogo from 'assets/images/particles/banner/particle-under-log
 import prticleTopRight from 'assets/images/particles/banner/prticle-top-right.png';
 import particleBottomLeft from 'assets/images/particles/banner/particle-bottom-left.png';
 import particleBottomRight from 'assets/images/particles/banner/particle-bottom-right.png';
-
+import videoPosterToken from 'assets/images/banners/video/leven-token.png';
+import videoPosterIntro from 'assets/images/banners/video/leven-intro.png';
 import BannerWrapper from './banner.style';
 
 Modal.setAppElement('body');
@@ -78,7 +79,10 @@ const Banner = (props) => {
       fontSize: '20px'
     },
     nextRow: {
-      marginTop: '50px'
+      marginTop: '150px'
+    },
+    video: {
+      width: '100%'
     }
   };
 
@@ -172,18 +176,18 @@ const Banner = (props) => {
             <img src={CoinLogo} className="banner__thumb" alt="cryptik banner thumb" />
           </Col>
         </Row>
-        {/* <Row style={customStyles.nextRow}>
+        <Row style={customStyles.nextRow}>
           <Col className="xs-12">
-            <iframe width="100%" height="500"
-              src="https://www.youtube.com/watch?v=lMMEO8AHipc&output=embed">
-            </iframe>
+            <video controls autoPlay muted loop preload="auto" style={customStyles.video} poster={videoPosterToken}>
+              <source src="https://drive.google.com/file/d/1GD5uZcTS4K-Sf4YSQjqwK_5Rwhu1pg76/view?usp=sharing" type="video/mp4" />
+            </video>
           </Col>
           <Col className="xs-12">
-            <iframe width="100%" height="500"
-              src="https://www.youtube.com/watch?v=KmxutC2bFNA&output=embed">
-            </iframe>
+            <video controls autoPlay muted loop preload="auto" style={customStyles.video} poster={videoPosterIntro}>
+              <source src="https://drive.google.com/file/d/124RybLuKlfGiwYyM135xuy9MvLd95mP2/view?usp=sharing" type="video/mp4" />
+            </video>
           </Col>
-        </Row> */}
+        </Row>
       </Container>
     </BannerWrapper>
   )
